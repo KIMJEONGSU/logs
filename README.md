@@ -14,32 +14,33 @@
 ### 2 프로젝트 진행절차
 2.1 데이터 소개
 * 데이터 shape : 301861 rows × 7 columns
-* columns : actiontype, ismydoc, ext, sessionid, documentposition, datetime, screen
-* 출처 : Kaggle
+* columns : actiontype(문서 이용시 행동), ismydoc(내문서 해당 여부), ext(문서 확장자), sessionid(유저 식별자), documentposition(문서 이용시 위치 정보), datetime(날짜), screen(페이지 이름)
+* 출처 : GitHub
   
 2.2 데이터 전처리
 * datetime은 datetime으로 타입 변환.
 * 요일 컬럼 생성.
 * sessionid의 경우 보기 쉽게 int로 변경.  
   ![image](https://github.com/KIMJEONGSU/logs/assets/23291338/53c16fc1-8502-419b-be56-973e21ad233d)
+* 세션의 경우 시간이 나타나 있지 않고 날짜만 존재하기 때문에 재정의는 하지 않고 분석 진행
 
 
 2.3 EDA
+* 날짜별 로그 건수에서 패턴이 보이며 주로 주말(23%)보다는 평일(77%)에 높음
+<table>
+  <tr>
+    <td>
+      <img src='photo/날짜별로그건수.png' width="100%" height="100%">
+    </td>
+    <td>
+      <img src='photo/요일별로그건수.png' width="100%" height="100%">
+    </td>
+  </tr>
+</table>
 <table>
   <tr>
     <td>
       <img src='photo/.png' width="100%" height="100%">
-    </td>
-    <td>     
-        <p><customer 데이터></p>
-    </td>
-  </tr>
-    <tr>
-    <td>
-      <img src='photo/.png' width="100%" height="100%">
-    </td>
-    <td>     
-        <p><customer 데이터></p>
     </td>
   </tr>
 </table>
