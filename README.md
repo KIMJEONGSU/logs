@@ -15,6 +15,9 @@
 2.1 데이터 소개
 * 데이터 shape : 301861 rows × 7 columns
 * columns : actiontype(문서 이용시 행동), ismydoc(내문서 해당 여부), ext(문서 확장자), sessionid(유저 식별자), documentposition(문서 이용시 위치 정보), datetime(날짜), screen(페이지 이름)
+
+![image](https://github.com/KIMJEONGSU/logs/assets/23291338/9e71c7dc-fe6d-41be-906d-8f75ad0a289d)
+
 * 출처 : GitHub
 
 2.2 데이터 전처리
@@ -25,34 +28,24 @@
 * 세션의 경우 시간이 나타나 있지 않고 날짜만 존재하기 때문에 재정의는 하지 않고 분석 진행
 
 
-2.3 EDA(문제정의 : 구매완료 페이지의 높은 이탈률(93%))
+2.3 EDA
 * 날짜별 로그 건수에서 패턴이 보이며 주로 주말(23%)보다는 평일(77%)에 높음
 <table>
     <td>
-      <img src='photo/날짜별로그건수.png' width="100%" height="100%">
+      <img src='photo/날짜별로그건수.png' width="70%" height="70%">
     </td>
     <td>
-      <img src='photo/요일별로그건수.png' width="100%" height="100%">
+      <img src='photo/요일별로그건수.png' width="70%" height="70%">
     </td>
 </table>
 
-* 페이지별 비율에서 main(70.82%)이 가장 높고, purchase_done(0.03%)이 가장 낮음.
-* otherapp(71%)에 가장 많이 문서가 위치함.
-<table>
-    <td>
-      <img src='photo/페이지별비율.png' width="100%" height="100%">
-    </td>
-    <td>
-      <img src='photo/문서위치별건수.png' width="100%" height="100%">
-    </td>
-</table>
+* 트래픽이 많은 페이지 파악 : 페이지별 비율에서 main(70.82%)이 가장 높고, purchase_done(0.03%)이 가장 낮음.
+<img src='photo/페이지별비율.png' width="40%" height="40%">
+
 
 * 2016년 7월 한달동안의 페이지별 방문수가 급격히 줄어든 것을 확인할 수 있음.
-<table>
-    <td>
-      <img src='photo/페이지별방문수.png' width="100%" height="100%">
-    </td>
-</table>
+<img src='photo/페이지별방문수.png' width="60%" height="60%">
+
 
 * **가설1. 이탈하는 원인 중 하나는 확장자 구버전일까?**
 * Funnel 분석을 통해 확장자 버전에 따른 이탈률을 보았을 때, 상대적으로 구버전의 이탈률이 높지만, 엄청난 큰 차이가 있지는 않다.(가설1 기각 보류)
@@ -60,18 +53,18 @@
 <table>
 <tr>
     <td>
-      <img src='photo/확장자구버전사용비율.png' width="100%" height="100%">
+      <img src='photo/확장자구버전사용비율.png' width="70%" height="70%">
     </td>
     <td>
-      <img src='photo/날짜별확장자건수.png' width="100%" height="100%">
+      <img src='photo/날짜별확장자건수.png' width="70%" height="70%">
     </td>
 </tr>
 <tr>
     <td>
-      <img src='photo/(구버전)페이지별 이탈률.png' width="100%" height="100%">
+      <img src='photo/(구버전)페이지별 이탈률.png' width="70%" height="70%">
     </td>
     <td>
-      <img src='photo/(기존)페이지별이탈률.png' width="100%" height="100%">
+      <img src='photo/(기존)페이지별이탈률.png' width="70%" height="70%">
     </td>
 </tr>
 </table>
