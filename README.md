@@ -24,53 +24,43 @@
 * datetime은 datetime으로 타입 변환.
 * 요일 컬럼 생성.
 * sessionid의 경우 보기 쉽게 int로 변경.  
-  ![image](https://github.com/KIMJEONGSU/logs/assets/23291338/53c16fc1-8502-419b-be56-973e21ad233d)
-* 세션의 경우 시간이 나타나 있지 않고 날짜만 존재하기 때문에 재정의는 하지 않고 분석 진행
+<img src='visualization/데이터.png' width="70%" height="70%">
+* 세션의 경우 시간이 나타나 있지 않고 날짜만 존재하기 때문에 재정의 과정없이 분석 진행
 
 
 2.3 EDA
 * 날짜별 로그 건수에서 패턴이 보이며 주로 주말(23%)보다는 평일(77%)에 높음
 <table>
     <td>
-      <img src='photo/날짜별로그건수.png' width="70%" height="70%">
+      <img src='visualization/날짜별로그건수.png' width="100%" height="100%">
     </td>
     <td>
-      <img src='photo/요일별로그건수.png' width="70%" height="70%">
+      <img src='visualization/요일별로그건수.png' width="100%" height="100%">
     </td>
 </table>
 
-* 트래픽이 많은 페이지 파악 : 페이지별 비율에서 main(70.82%)이 가장 높고, purchase_done(0.03%)이 가장 낮음.
-<img src='photo/페이지별비율.png' width="40%" height="40%">
-
-
+* 페이지별 비율에서 main(70.82%)이 가장 높고, purchase_done(0.03%)이 가장 낮음. 
+* ```퍼널 분석```을 통해 페이지 이탈률(Bounce Rate) 파악.
 * 2016년 7월 한달동안의 페이지별 방문수가 급격히 줄어든 것을 확인할 수 있음.
-<img src='photo/페이지별방문수.png' width="60%" height="60%">
-
-
-* **가설1. 이탈하는 원인 중 하나는 확장자 구버전일까?**
-* Funnel 분석을 통해 확장자 버전에 따른 이탈률을 보았을 때, 상대적으로 구버전의 이탈률이 높지만, 엄청난 큰 차이가 있지는 않다.(가설1 기각 보류)
-* PDF(27%), DOCX(18%), XLSX(17%) 순으로 높음.
+<<<<<<< HEAD
+* 또한 리텐션율(한달동안 2회이상 방문한 유저 비율)도 0.81%로 굉장히 낮음.
 <table>
-<tr>
     <td>
-      <img src='photo/확장자구버전사용비율.png' width="70%" height="70%">
+      <img src='visualization/페이지별비율.png' width="100%" height="100%">
     </td>
     <td>
-      <img src='photo/날짜별확장자건수.png' width="70%" height="70%">
-    </td>
-</tr>
-<tr>
-    <td>
-      <img src='photo/(구버전)페이지별 이탈률.png' width="70%" height="70%">
+      <img src='visualization/페이지별방문수.png' width="100%" height="100%">
     </td>
     <td>
-      <img src='photo/(기존)페이지별이탈률.png' width="70%" height="70%">
+      <img src='visualization/페이지별이탈률.png' width="100%" height="100%">
     </td>
-</tr>
 </table>
 
-* 리텐션율 : 한달동안 2회이상 방문한 유저의 비율은 0.81%이다.
-
+* 이탈의 원인 파악
+  * **가설1. 이탈하는 원인 중 하나는 확장자로 구버전일수록 이탈률이 높다**
+  * 퍼널 분석을 통해 확장자 버전에 따른 이탈률을 보았을 때, 상대적으로 구버전의 이탈률이 높지만, 엄청난 큰 차이가 있지는 않다.
+  * 카이제곱 검정을 통해 두 그룹의 이탈률이 유의미한지 알아보았을때, p-value가 0.7로 유의 수준보다 훨씬 높은 값이므로 가설을 기각할 근거가 부족하다. 즉 두 그룹간의 이탈률은 통계적으로 유의미한 차이가 있다고 말하기 어렵다.
+  <img src='visualization/페이지별이탈률.png' width="50%" height="50%">
 ### 3. 결론
 * 단기적으로 봤을 때, 이탈률이 가장 높은 구매완료 페이지부터 개선하는 것이 가장 영향력이 있어보임.
 * 리텐션율도 낮은 것으로 보아 앱 내용이나 조작 방법이 어려워 이탈 가능성이 높아짐. A/B Test를 통해 UI/UX 개선의 필요성 있음.
