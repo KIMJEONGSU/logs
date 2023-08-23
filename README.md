@@ -17,7 +17,7 @@
 * 데이터 shape : 301861 rows × 7 columns
 * columns : actiontype(문서 이용시 행동), ismydoc(내문서 해당 여부), ext(문서 확장자), sessionid(유저 식별자), documentposition(문서 이용시 위치 정보), datetime(날짜), screen(페이지 이름)
 
-<img src='visualization/매핑.png' width="70%" height="70%">
+<img src='visualization/데이터.png' width="70%" height="70%">
 
 * 출처 : GitHub
 
@@ -25,7 +25,7 @@
 * datetime은 datetime으로 타입 변환.
 * 요일 컬럼 생성.
 * sessionid의 경우 보기 쉽게 int로 변경.  
-<img src='visualization/데이터.png' width="70%" height="70%">
+<img src='visualization/매핑.png' width="70%" height="70%">
 
 * 세션 재정의
   * 보통 세션은 30분을 기준으로 하지만 해당 데이터에서는 시간이 아닌 날짜만 존재하기 때문에 0일을 기준으로 세션 재정의.(한 세션의 시작과 끝의 차이는 0일이어야함.)
@@ -71,7 +71,7 @@
       * 세션 아이디별로 이탈하기 전 마지막 페이지에서 확장자가 구버전인 경우와 아닌 경우의 비율은 21%, 79%이다.
       * 퍼널 분석을 통해 확장자 버전에 따른 이탈률을 보았을 때, 상대적으로 대부분의 구버전 이탈률이 높지만, 엄청난 큰 차이가 있지는 않다.
       * 카이제곱 검정을 통해 두 그룹의 이탈률이 유의미한지 알아보았을때, 검정 통계량 21.42와 p-value가 0.00067인 점에서 두 그룹의 페이지별 이탈률이 통계적으로 유의미하다고 할 수 있다.
-        <img src='visualization/카이제곱검.png' width="100%" height="100%">
+        <img src='visualization/카이제곱검정.png' width="100%" height="100%">
 
 
 ### 3. 결론
