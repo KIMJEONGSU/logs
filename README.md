@@ -6,7 +6,7 @@
 2023.07.17 - 2023.07.21
 
 ### 기술 스택
-Python: pandas, scipy, matplotlib, seaborn를 활용한 분석 및 시각화
+'''Python''' : pandas, scipy, matplotlib, seaborn를 활용한 분석 및 시각화
 
 ### 데이터 소개
 1. Data shape : 301861 rows × 7 columns
